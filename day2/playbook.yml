@@ -1,0 +1,9 @@
+---
+- name: first_playbook
+  hosts: all
+  gather_facts: false
+
+  tasks:
+    - name: first_task
+      apt:
+        update_cache: yes
