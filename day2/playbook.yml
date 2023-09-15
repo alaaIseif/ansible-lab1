@@ -6,4 +6,4 @@
   tasks:
     - name: first_task
       apt:
-        update_cache: yes
+        update_cache: true
