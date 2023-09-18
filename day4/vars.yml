@@ -1,5 +1,0 @@
-packages:
-- {item.pkg_name: "nginx", item.pkg_version: "latest"}
-- {item.pkg_name: "curl", item.pkg_version: "present"}
-- {item.pkg_name: "sudo", item.pkg_version: "absent"}
-- {item.pkg_name: "ssh", item.pkg_version: "latest"}

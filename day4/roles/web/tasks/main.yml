@@ -1,0 +1,11 @@
+- name: Install package
+  apt:
+    name: "{{ package_name }}"
+    state: present
+  notify: Copy index.html
+
+- name: Copy index.html
+  template:
+    src: ./"{{ template_name }}"
+    dest: /var/www/html/index.html
+  notify: Copy additional files
