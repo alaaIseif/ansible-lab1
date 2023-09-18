@@ -1,0 +1,16 @@
+- name: play_loops
+  hosts:  web_servers
+
+  tasks:
+
+    - name: installing a webserver
+      apt:
+        name: "{{ item }}"
+        state: latest
+      loop:
+        - nginx
+        - curl
+        - sudo
+        - ssh
+
+
