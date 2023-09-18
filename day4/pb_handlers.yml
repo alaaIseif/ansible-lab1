@@ -1,0 +1,22 @@
+- name: play5
+  hosts: web_servers
+  vars:
+     file_names:
+      - script.js
+      - style.css
+      - index.html
+
+  tasks:
+    - name: Copy files
+      copy:
+        src: "{{ item }}"
+        dest: /files/{{ item }}
+      with_items: "{{ file_names }}"
+      notify: Restart service
+
+- name: Restart service
+  handlers:
+    - name: Restart service
+      sysvinit:
+        name: nginx
+        state: restarted

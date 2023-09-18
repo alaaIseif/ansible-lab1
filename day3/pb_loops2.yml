@@ -1,4 +1,4 @@
-- name: play_loops
+- name: play2
   hosts:  web_servers
   vars_files: ./vars.yml
   tasks:

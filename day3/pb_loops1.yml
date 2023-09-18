@@ -1,4 +1,4 @@
-- name: play_loops
+- name: play1
   hosts:  web_servers
 
   tasks:
