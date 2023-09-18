@@ -1,9 +1,19 @@
 ---
-- name: first_playbook
-  hosts: all
-  gather_facts: false
+- name: playbook-day2
+  hosts: web_servers
+  gather_facts: False
 
   tasks:
-    - name: first_task
+    - name: apt update
       apt:
-        update_cache: true
+        update_cache: True
+
+    - name: copy index file
+      copy: 
+        src: ./index.html
+        dest: /var/www/html/index.html
+          
+    - name: Restarting the web-server
+      sysvinit: 
+        name: nginx
+        state: restarted
